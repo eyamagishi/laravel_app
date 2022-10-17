@@ -12,6 +12,18 @@ class TodosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // 以下追加
+        DB::table('todos')->insert([ //todosテーブルに以下を入力する
+            [
+                'content' => '開発環境を構築する',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'content' => 'Laravelをインストールする',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
     }
 }
