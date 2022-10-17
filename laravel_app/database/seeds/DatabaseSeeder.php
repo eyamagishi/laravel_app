@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
-{
+{ //どのseederを実行するか制御している
     /**
      * Seed the application's database.
      *
