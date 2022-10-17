@@ -1,4 +1,5 @@
 <?php
+/*php artisan make:seeder TodosTableSeeder*/
 
 use Illuminate\Database\Seeder;
 
