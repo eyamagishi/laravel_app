@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// 追加
+Route::get('/test', function () {
+    echo 'Hello World!';
+});
