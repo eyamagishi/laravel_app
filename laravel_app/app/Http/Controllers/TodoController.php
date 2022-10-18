@@ -11,4 +11,9 @@ class TodoController extends Controller
     {
         return view('todo.create');
     }
+    // 追加
+    public function store()
+    {
+    
+    }
 }
