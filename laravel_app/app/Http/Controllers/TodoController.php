@@ -12,8 +12,9 @@ class TodoController extends Controller
         return view('todo.create');
     }
     // 追加
-    public function store()
+    // 修正
+    public function store(Request $request)
     {
-    
+        dd($request->all());
     }
 }
