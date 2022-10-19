@@ -9,7 +9,6 @@ class TodoController extends Controller
 {
     // 追加
     private $todo;
-
     // 追加
     public function __construct(Todo $todo)
     {
