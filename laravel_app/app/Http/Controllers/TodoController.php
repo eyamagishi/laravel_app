@@ -23,6 +23,6 @@ class TodoController extends Controller
     // 修正
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
     }
 }
