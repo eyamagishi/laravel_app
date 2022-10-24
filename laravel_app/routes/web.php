@@ -27,3 +27,5 @@ Route::get('/todo/create', 'TodoController@create')->name('todo.create');
 Route::post('/todo', 'TodoController@store')->name('todo.store'); // '/todo/store'にしない　→　RESTful
 // 追加
 Route::get('/todo', 'TodoController@index')->name('todo.index');
+// 追加
+Route::get('/todo/{id}', 'TodoController@show')->name('todo.show'); // URLのパラメータを受け取る
