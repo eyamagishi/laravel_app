@@ -18,7 +18,6 @@ class TodoController extends Controller
     public function index()
     {
         $todos = $this->todo->all();
-        // dd($todos);
         // 追加
         return view('todo.index', ['todos' => $todos]);
     }
@@ -31,7 +30,6 @@ class TodoController extends Controller
     // 修正
     public function store(Request $request)
     {
-        // dd($request->all());
         $inputs = $request->all();
         $this->todo->fill($inputs);
         $this->todo->save();
@@ -41,9 +39,25 @@ class TodoController extends Controller
     // 追加
     public function show($id)
     {
-        // dd($id);
         $todo = $this->todo->find($id);
         // 追加
         return view('todo.show', ['todo' => $todo]);
+    }
+    // 追加
+    public function edit($id)
+    {
+        $todo = $this->todo->find($id);
+        return view('todo.edit', ['todo' => $todo]);
+    }
+    
+    // 追加
+    public function update(Request $request, $id)
+    {
+        // 追加
+        $inputs = $request->all();
+        $todo = $this->todo->find($id);
+        $todo->fill($inputs);
+        $todo->save();
+        return redirect()->route('todo.show', $todo->id);
     }
 }
