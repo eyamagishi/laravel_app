@@ -30,4 +30,11 @@ class TodoRequest extends FormRequest
             'content' => 'required|max:255',
         ];
     }
+    public function messages() // テンプレートなメッセージ
+    {
+        return [
+            'content.required' => 'ToDoが入力されていません。',
+            'content.max' => 'ToDoは :max 文字以内で入力してください。',
+        ];
+    }
 }
