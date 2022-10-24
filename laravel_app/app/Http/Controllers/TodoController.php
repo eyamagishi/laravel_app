@@ -10,7 +10,7 @@ class TodoController extends Controller
     // 追加
     private $todo;
     // 追加
-    public function __construct(Todo $todo)
+    public function __construct(Todo $todo) // Todoクラスのインスタンス化をしている
     {
         $this->todo = $todo;
     }
@@ -24,5 +24,8 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $inputs = $request->all();
+        $this->todo->fill($inputs);
+        $this->todo->save();
     }
 }
