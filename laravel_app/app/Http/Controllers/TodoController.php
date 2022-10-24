@@ -15,6 +15,14 @@ class TodoController extends Controller
         $this->todo = $todo;
     }
     // 追加
+    public function index()
+    {
+        $todos = $this->todo->all();
+        // dd($todos);
+        // 追加
+        return view('todo.index', ['todos' => $todos]);
+    }
+    // 追加
     public function create()
     {
         return view('todo.create');
@@ -27,5 +35,7 @@ class TodoController extends Controller
         $inputs = $request->all();
         $this->todo->fill($inputs);
         $this->todo->save();
+        // 追加
+        return redirect()->route('todo.index');
     }
 }
